@@ -23,7 +23,7 @@
   4. Client: **Rou Jia Mo**
 - Khác nhau: 
   - Không tồn tại AbstractProduct, các Method (Meet, YuanLao) được khởi tạo chỉ dưới dạng class thường, không phải abstract hoặc interface
-```
+```java
                   package com.example.jingbin.designpattern.factory.cxgc;
 
                   /**
@@ -61,7 +61,7 @@
     - Prototype: Class Shape đóng vai trò khởi tạo một hình nói chung
     - ConcretePrototype: Các class con đóng vai trò clone theo yêu cầu (Circle, Rectangle, Square)
     - Client: Class ShapeCache đóng vai trò yêu cầu Shape clone các hình (Circle, Rectangle, Square)
-```
+```java
               public class ShapeCache {
 
               private static Hashtable<String, Shape> shapeMap = new Hashtable<String, Shape>();
@@ -95,7 +95,7 @@
     - Có một method public static để return instance được khởi tạo ở trên.
 - Repo có một số loại Implement khá hiệu quả như: 
   - Double Check Locking Singleton:
-```
+```java
         private static SingletonLanHan singletonLanHanFour;
 
         public static SingletonLanHan getSingletonLanHanFour() {
@@ -114,7 +114,7 @@
     
    - Bill Pugh Singleton Implementation:
   
-```
+```java
       public class SingletonIn {
 
           private SingletonIn() {
@@ -144,7 +144,7 @@
   4. Client
   - Trong đó giao diện trên một chiếc điện thoại di động tốn 5V, điện áp gia đình là 220, vậy nên ta cần 1 Adapter (cụ thể là class V5PowerAdapter) để chuyển đổi điện áp 220V sang 5V:
 
-```
+```java
           public class V5PowerAdapter implements V5Power {
 
               private int v220power;
@@ -179,7 +179,7 @@
       - Tạo class Shape dựa trên DrawAPI
       - Tạo class Circle dựa trên Shape
       - Sử dụng Shape và DrawAPI để vẽ các hình màu khác nhau
-```
+```java
         binding.btRed.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -204,7 +204,7 @@
 #### ***3. Composite***
 - Bản chất: Composite là một mẫu thiết kế thuộc nhóm cấu trúc (Structural Pattern). Composite Pattern là một sự tổng hợp những thành phần có quan hệ với nhau để tạo ra thành phần lớn hơn. Nó cho phép thực hiện các tương tác với tất cả đối tượng trong mẫu tương tự nhau.
 - Trong repo lần này tác giả đã không theo quy tắc chuẩn của GOF bởi không tồn tại FileComponent một cách cụ thể, chỉ tồn tại FolderComposite tên Employee (bản thân đã đóng vai trò là FileComponent và bao gồm các Leaf)
-```
+```java
     public class Employee {
 
     private String name;
@@ -247,7 +247,7 @@
 
 -  Và class **Client** (class CompositeActivity) để thao tác:
 
-```
+```java
         final Employee ceo = new Employee("John", "CEO", 30000);
 
         Employee headSales = new Employee("Robert", "Head sales", 20000);
@@ -273,7 +273,7 @@
 - Bản chất: Decorator pattern là một trong những Pattern thuộc nhóm cấu trúc (Structural Pattern). Nó cho phép người dùng thêm chức năng mới vào đối tượng hiện tại mà không muốn ảnh hưởng đến các đối tượng khác. Kiểu thiết kế này có cấu trúc hoạt động như một lớp bao bọc (wrap) cho lớp hiện có. Mỗi khi cần thêm tính năng mới, đối tượng hiện có được wrap trong một đối tượng mới (decorator class).
 - Repo đang xét đã lấy ví dụ về việc đính đá quý (GemDecorator) lên các thiết bị (Equips) trong trò chơi, trong đó:
   -  Lớp **Component** tên IEquips là một interface quy định các method chung cần phải có cho tất cả các thành phần tham gia vào mẫu này (ví dụ ở đây là calculateAttack và description)
-```
+```java
         public interface IEquip {
 
             /**
@@ -298,7 +298,7 @@
   - Repo đã dùng cấu trúc của việc chiếu phim tại nhà (HomeTheater) để làm ví dụ, trong đó: 
     - Khi xem phim tại nhà, ta cần chuẩn bị rất nhiều thứ như: bật máy tính, tắt đèn, bật máy lòng bỏng ngô, làm bỏng ngô, bật máy chiếu, bật âm thanh.... và sau khi xem xong lại phải lặp lại 1 loạt để thực hiện việc kết thúc. Nếu như không sắp xếp các công việc rõ ràng thì sẽ rất mệt và tốn thời gian!
     - Vì vậy class HomeTheaterFacade đã sắp xếp các công việc riêng lẻ vào từng hành động chính (xem phim và ngừng xem phim) một cách hợp lí. Các công việc này không cần biết class Facade và ko cần Implement từ nó.
-```
+```java
       public void watchMovie() {
         computer.on();
         light.down();
@@ -325,7 +325,7 @@
 - Giống nhau:
   - Repo đã sử dụng việc vẽ 20 hình tròn bằng 5 màu tại các vị trí random (ngẫu nhiên) để làm ví dụ, trong đó:
   -  Class FlyweightActivity đóng vai trò như FlyweightFactory quản lí việc vẽ hình tròn. Để tránh tình trạng tràn bộ nhớ hoặc quái tải bộ nhớ, Hàm ShapeFactory cố gắng sử dụng lại các đối tượng hiện có cùng loại và nếu không tìm thấy đối tượng phù hợp, một đối tượng mới sẽ được tạo, nếu hình tròn chuẩn bị vẽ cùng màu thì sẽ gọi sẵn những hình đã vẽ.
-```
+```java
     public static Shape getShape(String color) {
         Shape shape = circleMap.get(color);
         if (shape == null) {
@@ -346,7 +346,21 @@
    1. Tạo giao diện (Image.java)
    2. Tạo một RealImage lớp thực thể triển khai giao diện. (Lớp proxy tương ứng: ProxyImage)
    3. Khi được yêu cầu, hãy sử dụng ProxyImage để lấy các đối tượng của lớp RealImage. 
+```java
+     public RealImage(String fileName) {
+        this.fileName = fileName;
+        loadFromDisk(fileName);
+    }
 
+    private void loadFromDisk(String fileName) {
+        Log.e("RealImage", "loading " + fileName);
+    }
+
+    @Override
+    public void display() {
+        Log.e("RealImage", "Displaying " + fileName);
+    }
+```
 - Khác nhau: không có quá nhiều sự khác biệt rõ rệt, cơ bản Pattern tuân thủ theo GOF
 
 ### **C. Behavioral Pattern**
@@ -373,7 +387,7 @@
 - Giống nhau:
 - Khác nhau: không có quá nhiều sự khác biệt rõ rệt, cơ bản Pattern tuân thủ theo GOF
 #### ***5. Mediator***
-- Bản chất:
+- Bản chất: Mediator Pattern là một trong những Pattern thuộc nhóm hành vi (Behavior Pattern). Mediator có nghĩa là người trung gian. Pattern này nói rằng “Định nghĩa một đối tượng gói gọn cách một tập hợp các đối tượng tương tác. Mediator thúc đẩy sự khớp nối lỏng lẻo (loose coupling) bằng cách ngăn không cho các đối tượng đề cập đến nhau một cách rõ ràng và nó cho phép bạn thay đổi sự tương tác của họ một cách độc lập”.
 - Giống nhau:
 - Khác nhau: không có quá nhiều sự khác biệt rõ rệt, cơ bản Pattern tuân thủ theo GOF
 #### ***6. Memento***
