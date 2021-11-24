@@ -337,7 +337,7 @@
     }
 ```
 - Khác nhau: không có quá nhiều sự khác biệt rõ rệt, cơ bản Pattern tuân thủ theo GOF
-- 
+
 #### ***7. Proxy***
 
 - Bản chất: Proxy Pattern là mẫu thiết kế mà ở đó tất cả các truy cập trực tiếp đến một đối tượng nào đó sẽ được chuyển hướng vào một đối tượng trung gian (Proxy Class). Mẫu Proxy (người đại diện) đại diện cho một đối tượng khác thực thi các phương thức, phương thức đó có thể được định nghĩa lại cho phù hợp với múc đích sử dụng.
@@ -347,18 +347,59 @@
    2. Tạo một RealImage lớp thực thể triển khai giao diện. (Lớp proxy tương ứng: ProxyImage)
    3. Khi được yêu cầu, hãy sử dụng ProxyImage để lấy các đối tượng của lớp RealImage. 
 
+- Khác nhau: không có quá nhiều sự khác biệt rõ rệt, cơ bản Pattern tuân thủ theo GOF
+
 ### **C. Behavioral Pattern**
 #### ***1. Chain of Responsibility***
+- Bản chất: Chain of Responsiblity cho phép một đối tượng gửi một yêu cầu nhưng không biết đối tượng nào sẽ nhận và xử lý nó. Điều này được thực hiện bằng cách kết nối các đối tượng nhận yêu cầu thành một chuỗi (chain) và gửi yêu cầu theo chuỗi đó cho đến khi có một đối tượng xử lý nó.
+
+- Giống nhau:
+
+- Khác nhau:
+
 #### ***2. Command***
+- Bản chất: Command Pattern là một trong những Pattern thuộc nhóm hành vi (Behavior Pattern). Nó cho phép chuyển yêu cầu thành đối tượng độc lập, có thể được sử dụng để tham số hóa các đối tượng với các yêu cầu khác nhau như log, queue (undo/redo), transtraction.
+
+- Giống nhau:
+
+- Khác nhau:
+
 #### ***3. Interpreter***
+- Bản chất: Interpreter Pattern giúp người lập trình có thể “xây dựng” những đối tượng “động” bằng cách đọc mô tả về đối tượng rồi sau đó “xây dựng” đối tượng đúng theo mô tả đó.
+- Giống nhau:
+- Khác nhau:
 #### ***4. Iterator***
+- Bản chất: Iterator Pattern là một trong những Pattern thuộc nhóm hành vi (Behavior Pattern). Nó được sử dụng để “Cung cấp một cách thức truy cập tuần tự tới các phần tử của một đối tượng tổng hợp, mà không cần phải tạo dựng riêng các phương pháp truy cập cho đối tượng tổng hợp này”.
+- Giống nhau:
+- Khác nhau:
 #### ***5. Mediator***
+- Bản chất:
+- Giống nhau:
+- Khác nhau:
 #### ***6. Memento***
+- Bản chất: Memento là một trong những Pattern thuộc nhóm hành vi (Behavior Pattern). Memento là mẫu thiết kế có thể lưu lại trạng thái của một đối tượng để khôi phục lại sau này mà không vi phạm nguyên tắc đóng gói.
+- Giống nhau:
+- Khác nhau:
 #### ***7. Observer***
+- Bản chất: Observer Pattern là một trong những Pattern thuộc nhóm hành vi (Behavior Pattern). Nó định nghĩa mối phụ thuộc một – nhiều giữa các đối tượng để khi mà một đối tượng có sự thay đổi trạng thái, tất các thành phần phụ thuộc của nó sẽ được thông báo và cập nhật một cách tự động.
+- Giống nhau:
+- Khác nhau:
 #### ***8. State***
+- Bản chất: State Pattern là một trong những Pattern thuộc nhóm hành vi (Behavior Pattern). Nó cho phép một đối tượng thay đổi hành vi của nó khi trạng thái nội bộ của nó thay đổi. Đối tượng sẽ xuất hiện để thay đổi lớp của nó.
+- Giống nhau:
+- Khác nhau:
 #### ***9. Strategy***
+- Bản chất: Strategy Pattern là một trong những Pattern thuộc nhóm hành vi (Behavior Pattern). Nó cho phép định nghĩa tập hợp các thuật toán, đóng gói từng thuật toán lại, và dễ dàng thay đổi linh hoạt các thuật toán bên trong object. Strategy cho phép thuật toán biến đổi độc lập khi người dùng sử dụng chúng.
+- Giống nhau:
+- Khác nhau:
 #### ***10. Template Method***
+- Bản chất: Template Method Pattern là một trong những Pattern thuộc nhóm hành vi (Behavior Pattern). Pattern này nói rằng “Định nghĩa một bộ khung của một thuật toán trong một chức năng, chuyển giao việc thực hiện nó cho các lớp con. Mẫu Template Method cho phép lớp con định nghĩa lại cách thực hiện của một thuật toán, mà không phải thay đổi cấu trúc thuật toán“.
+- Giống nhau:
+- Khác nhau:
 #### ***11. Visitor***
+- Bản chất: Visitor Pattern là một trong những Pattern thuộc nhóm hành vi (Behavior Pattern). Visitor cho phép định nghĩa các thao tác (operations) trên một tập hợp các đối tượng (objects) không đồng nhất (về kiểu) mà không làm thay đổi định nghĩa về lớp (classes) của các đối tượng đó. Để đạt được điều này, trong mẫu thiết kế visitor ta định nghĩa các thao tác trên các lớp tách biệt gọi các lớp visitors, các lớp này cho phép tách rời các thao tác với các đối tượng mà nó tác động đến. Với mỗi thao tác được thêm vào, một lớp visitor tương ứng được tạo ra.
+- Giống nhau:
+- Khác nhau:
  
  
  
